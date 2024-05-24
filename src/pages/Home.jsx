@@ -62,7 +62,7 @@ const Home = () => {
 
   useEffect(()=>{
     fetchProductData();
-  },[])
+  },[loadMore])
 
   useEffect(() => {
     const handleIntersect = (entries) => {
