@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef,useCallback } from "react";
 import Spinner from "../components/Spinner";
 import Product from '../components/Product';
 import "./Home.css";
@@ -21,13 +21,6 @@ const Home = () => {
       console.log(data);
       setAllPosts(data);
       setposts(data.slice(0, 10));
-      // if (data.length === 0) {
-      //   setHasMore(false);
-      //   setloading(false);
-      //   return;
-      // }else
-      // setposts((prevposts) => [...prevposts, ...data]);
-      // setposts(data);
     }
     catch{
       console.log("error");
@@ -36,7 +29,22 @@ const Home = () => {
     setloading(false);
   }
 
-  const loadMore = () => {
+  // const loadMore = () => {
+  //   if (laoding) return;
+  //   setloading(true);
+  //   setTimeout(() => {
+  //     const currentLength = posts.length;
+  //     const nextSet = allPosts.slice(currentLength, currentLength + 10);
+  //     if (nextSet.length === 0) {
+  //       // Start again from the beginning if no more data
+  //       setposts((prevPosts) => [...prevPosts, ...allPosts.slice(0, 10)]);
+  //     } else {
+  //       setposts((prevPosts) => [...prevPosts, ...nextSet]);
+  //     }
+  //     setloading(false);
+  //   }, 1000); // Adding a delay to simulate network request
+  // };
+  const loadMore = useCallback(() => {
     if (laoding) return;
     setloading(true);
     setTimeout(() => {
@@ -50,7 +58,7 @@ const Home = () => {
       }
       setloading(false);
     }, 1000); // Adding a delay to simulate network request
-  };
+  }, [laoding, posts, allPosts]);
 
   useEffect(()=>{
     fetchProductData();
