@@ -18,7 +18,7 @@ const CartItem = ({item,itemindex}) => {
     <div className="w-full  border-b-4 border-black flex gap-x-3  justify-center items-center ">
       <div className="flex flex-row h-[20rem]">
         <div >
-          <img className="h-[16rem] w-[24rem]" src={item.image}></img>
+          <img className="h-[16rem] w-[24rem]" src={item.image} alt="cart_img"></img>
         </div>
 
         <div className="">
