@@ -33,7 +33,7 @@ const Product = ({post}) => {
         <p>{post.description.split(" ").slice(0,12).join(" ")+"..."}</p>
       </div>
       <div>
-        <img className="h-[8rem] w-[7rem] rounded-2xl" src={post.image}></img>
+        <img className="h-[8rem] w-[7rem] rounded-2xl" src={post.image} alt="product"></img>
       </div>
       <div className="flex gap-x-7 align-baseline">
         <div className=" text-green-700 font-extrabold text-[1.5rem]">
