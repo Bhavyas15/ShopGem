@@ -1,0 +1,35 @@
+.fl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.n{
+    padding-left: 1rem;
+    color: rgb(236, 189, 129);
+    font-size: 25px;
+}
+.p-2{
+    margin-right: -30px;
+}
+
+.eles{
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 100%;
+    margin-top: 2px;
+    color: white;
+    /* padding-bottom: 10px; */
+    padding-left:4px;
+}
+.nav-cont{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-content{
+    width: 100%;
+    background-color: #2d3748;
+}
