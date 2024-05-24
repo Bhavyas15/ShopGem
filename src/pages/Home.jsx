@@ -62,7 +62,7 @@ const Home = () => {
 
   useEffect(()=>{
     fetchProductData();
-  },[loadMore])
+  },[])
 
   useEffect(() => {
     const handleIntersect = (entries) => {
@@ -79,7 +79,7 @@ const Home = () => {
     return () => {
       if (observer.current && bottomObserver) observer.current.unobserve(bottomObserver);
     };
-  }, [laoding, posts]);
+  }, [laoding, posts, loadMore]);
 
 
   return (
